@@ -350,7 +350,7 @@ esac
 #
 # Add support for exposing lun0 as cdrom in mass-storage
 #
-cdromname="/system/etc/cdrom_install.iso"
+cdromname="/vendor/etc/cdrom_install.iso"
 platformver=`cat /sys/devices/soc0/hw_platform`
 case "$target" in
 	"msm8226" | "msm8610" | "msm8916")

@@ -82,7 +82,7 @@ start_vm_bms()
 
 start_msm_irqbalance_8939()
 {
-	if [ -f /system/vendor/bin/msm_irqbalance ]; then
+	if [ -f /vendor/bin/msm_irqbalance ]; then
 		case "$platformid" in
 		    "239" | "293" | "294" | "295" | "304" | "313" | "338" | "351" )
 			start vendor.msm_irqbalance;;
@@ -92,7 +92,7 @@ start_msm_irqbalance_8939()
 
 start_msm_irqbalance_8952()
 {
-        if [ -f /system/vendor/bin/msm_irqbalance ]; then
+        if [ -f /vendor/bin/msm_irqbalance ]; then
                 case "$platformid" in
                      "241" | "263" | "264" | "268" | "269" | "270" | "271")
                         start vendor.msm_irqbalance;;
@@ -439,7 +439,7 @@ echo 1 > /data/vendor/radio/db_check_done
 # Make modem config folder and copy firmware config to that folder for RIL
 #
 #ifdef VENDOR_EDIT
-# modify the source path to /system/etc/firmware/mbn_ota/ , hanqingpu, 20151119
+# modify the source path to /vendor/etc/firmware/mbn_ota/ , hanqingpu, 20151119
 ##if [ -f /data/vendor/radio/ver_info.txt ]; then
 ##    prev_version_info=`cat /data/vendor/radio/ver_info.txt`
 ##else
@@ -452,7 +452,7 @@ echo 1 > /data/vendor/radio/db_check_done
     mkdir /data/vendor/radio/modem_config
     chmod 770 /data/vendor/radio/modem_config
 ##    cp -r /firmware/image/modem_pr/mcfg/configs/* /data/vendor/radio/modem_config
-    cp -r /system/etc/firmware/mbn_ota/* /data/vendor/radio/modem_config
+    cp -r /vendor/etc/firmware/mbn_ota/* /data/vendor/radio/modem_config
     chown -hR radio.radio /data/vendor/radio/modem_config
 ##    cp /firmware/verinfo/ver_info.txt /data/vendor/radio/ver_info.txt
 ##    chown radio.radio /data/vendor/radio/ver_info.txt
